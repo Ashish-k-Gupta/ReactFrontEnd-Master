@@ -1,10 +1,10 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { QueryClient, QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Details from "./Details";
 import SearchParams from "./SearchParams";
 
-const QueryClient = new QueryClient({
+const queryClient = new QueryClient({
   default:{
     queries:{
       statleTime: Infinity,
@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-      <QueryClientProvider client={QueryClient}>
+      <QueryClientProvider client={queryClient}>
         <header>
           <Link to="/">Adopt Me!</Link>
         </header>
